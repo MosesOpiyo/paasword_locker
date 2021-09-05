@@ -61,10 +61,12 @@ class TestUser(unittest.TestCase):
          self.new_details.save_credentials()
          test_details = Credentials("this is a user detail") 
          test_user.save_user()
+         test_details.save_credentials()
 
-         found_contact = User.find_by_number("0711223344")
+         found_user = User.find_by_number("0711223344")
+         
 
-         self.assertEqual(found_contact.email,test_user.email)    
+         self.assertEqual(found_user.email,test_user.email)    
 
     def test_user_exist(self):
         self.new_user.save_user()

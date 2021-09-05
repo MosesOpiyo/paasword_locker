@@ -19,9 +19,10 @@ class Credentials:
          self.details = details
 
      @classmethod
-     def find_by_details(cls,number):
+     def find_by_details(cls:User,number):
           
           for detail in cls.credentials_list:
            for user in cls.user_list:
             if user.phone_number == number:
                 return detail
+     
