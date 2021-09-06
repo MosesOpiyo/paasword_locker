@@ -24,14 +24,14 @@ class Credentials:
       
      
      @classmethod
-     def find_by_username(cls,username):
+     def find_by_platform_name(cls,username):
           
           for credential in cls.credentials_list:
             if credential.username == username:
                 return credential  
 
      @classmethod   
-     def user_exist(cls,username):
+     def credential_exist(cls,username):
         
         for credential in cls.credentials_list:
             if credential.username == username:

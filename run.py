@@ -1,5 +1,6 @@
 #!/usr/bin/env python3.8
 from user import User
+from credentials import Credentials
 
 def create_user(name,email,phone_number,password):
     '''
@@ -7,36 +8,49 @@ def create_user(name,email,phone_number,password):
     '''
     new_user = User(name,email,phone_number,password)
     return new_user
+def create_credentials(platform_name,username,user_password):
+    new_credential = Credentials(platform_name,username,user_password)
+    return new_credential
 
 def save_users(user):
     '''
     Function to save user
     '''
     user.save_user()
+def save_credentials(credential):
+    credential.save_credential()
 
 def del_user(user):
     '''
     Function to delete a user
     '''
     user.delete_user()
+def del_credential(credential):
+    credential.delete_credential()
 
 def find_user(number):
     '''
     Function that finds a user by number and returns the user
     '''
     return User.find_by_number(number)
+def find_credential(username):
+    return Credentials.find_by_platform_name(username)
 
 def check_existing_user(number):
     '''
     Function that check if a user exists with that number and return a Boolean
     '''
     return User.user_exist(number)
+def check_credential_exists(username):
+    return Credentials.credential_exist(username)
 
 def display_users():
     '''
     Function that returns all the saved users
     '''
     return User.display_users()
+def display_credentials():
+    return Credentials.display_credentials()
 
 
 def main():
@@ -88,6 +102,9 @@ def main():
 
                     for user in display_users():
                         print(f"{user.name} {user.email} ..{user.phone_number}")
+                    for credential in display_credentials():
+                        print(f"{credential.username} {credential.platform_name} {credential.user_password}")
+                    
 
                     print('\n')
                  else:
@@ -106,8 +123,21 @@ def main():
 
                                     print(f"Phone number.......{search_user.phone_number}")
                                     print(f"Email address.......{search_user.email}")
+                                    print("Enter username in the platform")
+
+                                    search_username = input()
+
+                                    if check_credential_exists(search_username):
+                                        search_name = find_credential(search_username)
+                                        print(f"{search_name.username}")
+                                        print('-'*10)
+                                        print(f"platform name......{search_name.platform_name}")
+                                        print(f"platform password.....{search_name.user_password}")
+
+
                         else:
                                     print("That contact does not exist")
+                        
 
             elif short_code == "ex":
                             print("Bye .......")
