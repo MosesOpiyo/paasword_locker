@@ -66,7 +66,17 @@ def main():
                 print ("Password ....")
                 Password = input()
 
-                save_users(create_user(Name,Email,Phone_number,Password)) # create and save new contact.
+                print("platform name .....")
+                platform_name = input()
+
+                print("Username in the platform ....")
+                username = input()
+
+                print("Your platform password ....")
+                userpassword = input()
+
+
+                save_users(create_user(Name,Email,Phone_number,Password,platform_name,username,userpassword)) # create and save new contact.
                 print ('\n')
                 print(f"New User {Name} created")
                 print ('\n')

@@ -15,11 +15,11 @@ class Credentials:
         
         Credentials.credentials_list.remove(self)  
      
-     def __init__(self,platform_name,username,password):
+     def __init__(self,platform_name,username,user_password):
 
       self.platform_name = platform_name
       self.username = username
-      self.password = password
+      self.user_password = user_password
 
       
      
