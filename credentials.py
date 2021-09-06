@@ -34,7 +34,7 @@ class Credentials:
      def user_exist(cls,username):
         
         for credential in cls.credentials_list:
-            if user.phone_number == number:
+            if credential.username == username:
                 return True
 
         return False
