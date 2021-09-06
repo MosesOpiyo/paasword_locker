@@ -22,18 +22,18 @@ class Credentials:
       self.password = password
 
       
+     
      @classmethod
-     def find_by_number(cls,number,detail):
+     def find_by_username(cls,username):
           
-          for user in cls.user_list:
-            if user.phone_number == number:
-                for detail in cls.credentials_list:
-                 return detail  
-    
+          for credential in cls.credentials_list:
+            if credential.username == username:
+                return credential  
+
      @classmethod   
-     def user_exist(cls,number):
+     def user_exist(cls,username):
         
-        for user in cls.user_list:
+        for credential in cls.credentials_list:
             if user.phone_number == number:
                 return True
 
