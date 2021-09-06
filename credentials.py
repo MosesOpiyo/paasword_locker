@@ -15,8 +15,12 @@ class Credentials:
         
         Credentials.credentials_list.remove(self)  
      
-     def __init__(self,details):
-         self.details = details
+     def __init__(self,platform_name,username,password):
+
+      self.platform_name = platform_name
+      self.username = username
+      self.password = password
+
       
      @classmethod
      def find_by_number(cls,number,detail):
