@@ -8,7 +8,7 @@ def create_user(name,email,phone_number,password):
     '''
     new_user = User(name,email,phone_number,password)
     return new_user
-def create_credentials(platform_name,username,user_password):
+def create_credential(platform_name,username,user_password):
     new_credential = Credentials(platform_name,username,user_password)
     return new_credential
 
@@ -18,7 +18,7 @@ def save_users(user):
     '''
     user.save_user()
 def save_credentials(credential):
-    credential.save_credential()
+    credential.save_credentials()
 
 def del_user(user):
     '''
@@ -90,7 +90,8 @@ def main():
                 user_password = input()
 
 
-                save_users(create_user(Name,Email,Phone_number,Password,platform_name,username,user_password)) # create and save new contact.
+                save_users(create_user(Name,Email,Phone_number,Password)) # create and save new contact.
+                save_credentials(create_credential(platform_name,username,user_password))
                 print ('\n')
                 print(f"New User {Name} created")
                 print ('\n')
@@ -103,7 +104,7 @@ def main():
                     for user in display_users():
                         print(f"{user.name} {user.email} ..{user.phone_number}")
                     for credential in display_credentials():
-                        print(f"{credential.username} {credential.platform_name} {credential.user_password}")
+                        print(f"{credential.username}.. {credential.platform_name}.. {credential.user_password}")
                     
 
                     print('\n')
