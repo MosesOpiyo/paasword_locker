@@ -19,3 +19,6 @@ Display prompt for creating a user	Enter: cu	Enter the site name, your username 
 Display a user	Enter: du	Prints a list of saved users
 Exit application	Enter: ex	Exit the current navigation stage
 
+# licence
+MIT @2021 Moses Opiyo
+
