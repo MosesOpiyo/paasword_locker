@@ -10,19 +10,35 @@ class Credentials:
 
         Credentials.credentials_list.append(self)
 
-     def delete_details(self):
+     def delete_credentials(self):
 
         
         Credentials.credentials_list.remove(self)  
      
      def __init__(self,details):
          self.details = details
-
+      
      @classmethod
-     def find_by_details(cls:User,number):
+     def find_by_number(cls,number,detail):
           
-          for detail in cls.credentials_list:
-           for user in cls.user_list:
+          for user in cls.user_list:
             if user.phone_number == number:
-                return detail
+                for detail in cls.credentials_list:
+                 return detail  
+    
+     @classmethod   
+     def user_exist(cls,number):
+        
+        for user in cls.user_list:
+            if user.phone_number == number:
+                return True
+
+        return False
+    
+     @classmethod
+     def display_details(cls,detail):
+        '''
+        method that returns the contact list
+        '''
+        return cls.credentials_list
      
