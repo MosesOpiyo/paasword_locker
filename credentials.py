@@ -40,7 +40,7 @@ class Credentials:
         return False
     
      @classmethod
-     def display_details(cls,detail):
+     def display_credentials(cls):
         '''
         method that returns the contact list
         '''
