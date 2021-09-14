@@ -52,6 +52,12 @@ def display_users():
 def display_credentials():
     return Credentials.display_credentials()
 
+def generate_password(length):
+    """
+    This function will geneate a random password after being given a desired length
+    """
+    return Credentials.password_generator(length)
+
 
 def main():
     print("Welcome to the user list.What is your name?")
@@ -60,7 +66,7 @@ def main():
     print('\n')
 
     while True:
-            print("Use these short codes : cu - create a new user, du - display user, fu -find a user, ex -exit the user list ")
+            print("Use these short codes : cu - create a new user, du - display user, fu -find a user, cc - create credentials ex -exit the user list ")
 
             short_code = input().lower()
 
@@ -138,7 +144,20 @@ def main():
 
                         else:
                                     print("That contact does not exist")
-                        
+            elif short_code == "cc":
+                        print("To create a new credential input the following:")
+                        username = input("Enter your username in the account : ")
+                        print('\n')
+                        platform_name = input("Enter the platform name : ")
+                        print('\n')
+                        password = input("Do you wish to have a password generated for you automatically? Y/N : ").lower()
+                        print('\n')
+                        if password.startswith("y"):
+                            desired_length = int(input("Enter the length of the password you wish to generate : "))
+                            password = generate_password(desired_length)
+                        elif password.startswith("n"):
+                             password = input("Enter your credential password : ")
+                        save_credentials(create_credential(platform_name,username,password))           
 
             elif short_code == "ex":
                             print("Bye .......")

@@ -1,4 +1,6 @@
 from user import User
+import random
+import string
 
 class Credentials:
      """
@@ -45,4 +47,12 @@ class Credentials:
         method that returns the contact list
         '''
         return cls.credentials_list
-     
+     @classmethod
+     def password_generator(cls,length):
+        """
+        this method generates a random password with letters, symbols and digits
+        Args: 
+            length: This is the desired length of the password
+        """
+        characters = string.ascii_letters + string.ascii_lowercase + string.ascii_uppercase + string.digits + string.punctuation
+        return "".join(random.choice(characters) for i in range(length))
