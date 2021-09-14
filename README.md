@@ -13,11 +13,10 @@ Store my existing login credentials
 
 
 # Behaviour	Input	Output
-
-Display prompt for creating an account	Enter: cu	Enter your name, and password
-Display prompt for creating a user	Enter: cu	Enter the site name, your username and password
-Display a user	Enter: du	Prints a list of saved users
-Exit application	Enter: ex	Exit the current navigation stage
+1. Enter: cu creating an account 
+2. Enter: cuDisplay prompt for creating a user	
+3. Enter: du Prints list of saved users and their credentials
+4. Enter: ex Exit application	
 
 # licence
 MIT @2021 Moses Opiyo
